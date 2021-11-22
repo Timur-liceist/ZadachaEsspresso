@@ -5,7 +5,6 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, \
     QMainWindow, QTableWidgetItem
 
-from untitled import Ui_MainWindow
 
 
 class RedactWindow(QMainWindow):
@@ -99,11 +98,12 @@ class AddingWindow(QMainWindow):
         con.close()
 
 
-class Window(QMainWindow, Ui_MainWindow):
+class Window(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("untitled.ui", self)
         # self.setupUi(self)
+        self.setWindowTitle("Капучино")
         self.tableWidget.setColumnWidth(1, 100)
         self.tableWidget.setColumnWidth(2, 120)
         self.tableWidget.setColumnWidth(3, 120)
